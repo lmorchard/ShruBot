@@ -80,6 +80,8 @@ class ShruBot extends Mastotron {
 
     log.info({ msg: "favorited", created_at, acct });
 
+    if (Math.random() < 0.75) return;
+
     const resp = this.postStatus({
       status: `@${acct} My android heart goes out to you!`,
       visibility,
@@ -94,6 +96,8 @@ class ShruBot extends Mastotron {
     const { id, visibility } = status;
 
     log.info({ msg: "boosted", created_at, acct });
+
+    if (Math.random() < 0.75) return;
 
     const resp = this.postStatus({
       status: `@${acct} The Priests boost your name on this night!`,
